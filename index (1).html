@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gold, Raid and War: a virtual tour of the Witwatersrand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f4;--panel:#fff;--ink:#17212b;--mute:#55636f;--line:#cdd5dc;--gold:#a8741a;--raid:#a63d2f;--war:#2f5d7c}
+@media (prefers-color-scheme:dark){:root{--bg:#10171d;--panel:#18222b;--ink:#e8edf1;--mute:#a1afba;--line:#2c3a46;--gold:#d9a441;--raid:#e07a6a;--war:#7fb0d3}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "Source Sans 3",system-ui,sans-serif}
+.gold{--c:var(--gold)}.raid{--c:var(--raid)}.war{--c:var(--war)}
+header,.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{padding-top:28px}
+h1,h2,.date{font-family:Rokkitt,Georgia,serif}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.05;margin:0 0 10px;font-weight:800}
+.lead{color:var(--mute);max-width:64ch;margin:0}
+.wrap{display:grid;grid-template-columns:280px 1fr;gap:28px;margin-top:22px;padding-bottom:40px;align-items:start}
+nav ol{list-style:none;margin:0;padding:0;position:sticky;top:14px}
+.stop{display:block;width:100%;text-align:left;border:0;border-left:6px solid var(--c);background:none;color:inherit;font:inherit;line-height:1.3;padding:9px 12px;cursor:pointer}
+.stop small{color:var(--mute);font-size:.82rem}
+.stop[aria-current=true]{background:var(--panel);font-weight:600;box-shadow:0 0 0 1px var(--line)}
+.stop:focus-visible,.btn:focus-visible,.map a:focus-visible{outline:3px solid var(--c,var(--war));outline-offset:2px}
+article{background:var(--panel);border:1px solid var(--line);border-top:8px solid var(--c);padding:24px 26px}
+.date{font-size:1.5rem;font-weight:800;color:var(--c);margin:0}
+h2{font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.15;margin:2px 0 6px;font-weight:800}
+.phase{display:inline-block;border:1.5px solid var(--c);color:var(--c);padding:0 10px;border-radius:99px;font-size:.88rem;font-weight:600;margin-bottom:12px}
+article p{max-width:68ch}
+.why,.think{padding:10px 14px;margin:14px 0;max-width:68ch}
+.why{border-left:4px solid var(--c)}
+.think{background:var(--bg);border-radius:4px}
+figure{margin:14px 0}figure img{max-width:100%;display:block}figcaption{color:var(--mute);font-size:.9rem}
+.map iframe{width:100%;height:320px;border:1px solid var(--line);display:block}
+.map a{color:var(--c);font-weight:600}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px}
+.btn{font:600 1rem "Source Sans 3",sans-serif;padding:9px 18px;border:2px solid var(--c);background:var(--c);color:var(--panel);cursor:pointer;border-radius:4px}
+.btn[disabled]{opacity:.35;cursor:default}
+.count{color:var(--mute);font-size:.92rem}
+footer{max-width:1100px;margin:0 auto;padding:0 20px 36px;color:var(--mute);font-size:.9rem}
+.scene{width:100%;height:auto;display:block;background:var(--bg);border:1px solid var(--line);margin:8px 0 4px}
+.scene .mv{animation:mv var(--d) linear infinite;animation-delay:var(--dl)}
+.scene .mv.once{animation:mv var(--d) ease-out both;animation-delay:var(--dl)}
+.scene .mv.pace{animation:mv var(--d) linear infinite alternate;animation-delay:var(--dl)}
+@keyframes mv{from{transform:translateX(var(--x0))}to{transform:translateX(var(--x1))}}
+.fp{animation:fp calc(var(--d)*2) step-end infinite}
+@keyframes fp{0%{transform:scaleX(1)}50%{transform:scaleX(-1)}100%{transform:scaleX(-1)}}
+.leg{animation:sw .6s ease-in-out infinite alternate;animation-delay:var(--dl,0s)}
+.leg.b{animation-direction:alternate-reverse}
+.rd .leg{animation-duration:.33s}
+@keyframes sw{from{transform:rotate(-30deg)}to{transform:rotate(30deg)}}
+.bob{animation:bob .33s ease-in-out infinite alternate;animation-delay:var(--dl,0s)}
+@keyframes bob{to{transform:translateY(-2px)}}
+.once .leg,.once .bob{animation-iteration-count:var(--n);animation-fill-mode:none}
+.fl{opacity:0;animation:fi .5s 6.5s forwards}
+@keyframes fi{to{opacity:1}}
+.wave{animation:wv .45s ease-in-out infinite alternate}
+@keyframes wv{to{transform:scaleX(.6)}}
+@media (prefers-reduced-motion:reduce){.scene *{animation:none!important}.scene .mv{transform:translateX(var(--xs))!important}.scene .fl{opacity:1!important}}
+@media (max-width:800px){
+.wrap{grid-template-columns:1fr}
+nav ol{position:static;display:flex;overflow-x:auto;gap:6px}
+.stop{border-left:0;border-bottom:5px solid var(--c);white-space:nowrap;width:auto}
+article{padding:18px}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Gold, Raid and War: a virtual tour of the Witwatersrand, 1886–1902</h1>
+<p class="lead">Eight stops, from the discovery of gold to the peace of 1902. Read each stop, explore the satellite map, then answer the question before you move on.</p>
+</header>
+<div class="wrap">
+<nav aria-label="Tour stops"><ol id="nav"></ol></nav>
+<main><article id="main" aria-live="polite"></article></main>
+</div>
+<footer>Sources to start your research: South African History Online (sahistory.org.za) and The Heritage Portal (theheritageportal.co.za). Maps are loaded from Google Maps.</footer>
+<script>
+/* To add a photo to any stop, put a Wikimedia Commons image link in img and a caption in cap. */
+const PH={gold:"Gold rush",raid:"The Jameson Raid",war:"The road to war and the war"};
+const S=[
+{p:"gold",d:"1886",t:"Langlaagte: gold is found",q:"George Harrison Park, Langlaagte, Johannesburg",
+b:"In 1886 the prospector George Harrison found gold-bearing rock on the farm Langlaagte, on the Witwatersrand (“ridge of white waters”). The reef ran deep underground, so mining it needed machinery and heavy investment, not a pick and a pan. Within months the area was a proclaimed goldfield and a tent town was growing.",
+w:"The poor farming republic of the Transvaal, led by President Paul Kruger, was suddenly sitting on the richest goldfield in the world, and Britain was watching.",
+k:"Why does a deep reef favour big mining companies over individual diggers?",img:"",cap:""},
+{p:"gold",d:"1886 to 1895",t:"Johannesburg: Randlords, Uitlanders and workers",q:"Rand Club, Loveday Street, Johannesburg",
+b:"Johannesburg grew from nothing into a city of tens of thousands in about ten years. Mining magnates, the Randlords, built fortunes and clubs such as the Rand Club (1887). Foreign newcomers, the Uitlanders, paid heavy taxes but could hardly vote, because the Transvaal had stretched the residency rule to 14 years. Thousands of Black migrant workers laboured underground and lived in compounds, with no say in the dispute at all. In late 1895 an Uitlander Reform Committee began planning an uprising.",
+w:"The Transvaal’s wealth came from people it would not give political rights to. That tension set the stage for the Raid.",
+k:"Who had political power in Johannesburg in 1895, and who did not?",img:"",cap:""},
+{p:"raid",d:"29 December 1895",t:"Pitsani: the Raid begins",q:"Pitsani, Botswana",
+b:"Just across the border in the Bechuanaland Protectorate (now Botswana), Dr Leander Starr Jameson gathered about 500 mounted men from the Bechuanaland Border Police and the Chartered Company’s Rhodesian police. Cecil Rhodes, Prime Minister of the Cape Colony and head of the British South Africa Company, had planned for Jameson to ride in and support the Johannesburg uprising. The uprising was stalling, partly over which flag to fly, yet Jameson crossed into the Transvaal on 29 December anyway.",
+w:"A private force riding into a neighbouring republic in peacetime was an act of aggression, and it was meant to topple Kruger.",
+k:"What did Rhodes hope to gain if the plan had worked?",img:"",cap:""},
+{p:"raid",d:"1 January 1896",t:"Krugersdorp: the Boers close in",q:"Krugersdorp, Gauteng",
+b:"The raiders had been riding for days and the Boers were ready. Scouts and warnings had given Kruger’s commandos time to take up positions along the route. On New Year’s Day the column was fired on near Queen’s Mine, outside Krugersdorp, and could not break through to Johannesburg. Jameson turned towards the ridge at Doornkop.",
+w:"The Raid depended on surprise and speed. It had neither.",
+k:"Using stops 2 to 4, give two reasons the Raid was already failing.",img:"",cap:""},
+{p:"raid",d:"2 January 1896",t:"Doornkop: Jameson surrenders",q:"Doornkop, Soweto, Johannesburg",
+b:"On the ridge at Doornkop, now on the western edge of Soweto, Boer forces held the high ground and Jameson’s tired men surrendered. Jameson was handed to the British and sentenced in London to 15 months in prison. Reform Committee leaders were arrested in Johannesburg and tried in Pretoria; four were sentenced to death, but the sentences were commuted and heavy fines paid. Rhodes resigned as Cape Prime Minister. A memorial to raiders and Boers stands in a stone kraal near the site.",
+w:"The Raid embarrassed Britain, strengthened Kruger and left deep distrust. Germany’s Kaiser even sent Kruger a congratulatory telegram. In May 1900 British troops fought over this same ground on their way to take Johannesburg.",
+k:"How did the failure of the Raid make a later war more likely?",img:"",cap:""},
+{p:"raid",d:"1892 and after",t:"The Old Fort, Constitution Hill: a state on guard",q:"Old Fort, Constitution Hill, Johannesburg",
+b:"Kruger’s government built the Old Fort on Hospital Hill in 1892 to 1893, looking down on the Uitlander town. After the Raid the Transvaal spent heavily on modern rifles and artillery from Europe. The fort later became a prison and is now part of Constitution Hill, home of South Africa’s Constitutional Court.",
+w:"The fort shows a government that expected trouble on the Rand. After 1896 both sides prepared for a fight.",
+k:"Why would a government build a fort overlooking its own gold-mining town?",img:"",cap:""},
+{p:"war",d:"June to October 1899",t:"Kruger House, Pretoria: the road to war",q:"Kruger House Museum, Pretoria",
+b:"President Kruger lived here, in the Transvaal’s capital. After the Raid, the British High Commissioner, Sir Alfred Milner, pressed hard for voting rights for Uitlanders. Talks at Bloemfontein in May and June 1899 failed. On 9 October the Transvaal demanded that Britain withdraw troops from its borders. Britain refused, and war began on 11 October 1899, with the Orange Free State fighting beside the Transvaal.",
+w:"Gold, power and the vote were all part of the quarrel, and neither Kruger nor Milner would back down.",
+k:"Was the war caused by gold, by voting rights or by British imperial power? Argue for one.",img:"",cap:""},
+{p:"war",d:"1900 to 1902",t:"Melrose House, Pretoria: the peace",q:"Melrose House, Pretoria",
+b:"British forces under Lord Roberts took Johannesburg on 31 May 1900 and Pretoria on 5 June. The Boer commandos then turned to guerrilla war, and Britain answered with farm burning and concentration camps, where tens of thousands of Boer and Black African civilians died. The Treaty of Vereeniging was signed at Melrose House on 31 May 1902. Both republics became British colonies, and the question of Black voting rights was put off.",
+w:"The war is often called a white man’s war, but Black South Africans served as workers, scouts and sometimes armed auxiliaries, and suffered heavily. Their rights were left out of the settlement.",
+k:"Who gained and who lost from the peace of 1902?",img:"",cap:""}
+];
+/* Animated scenes. Actor = [type, startX, endX, seconds, colour, options]. Types: w walker, h top-hat walker, s standing, r rider, f white flag. */
+const BG={
+tents:'<path d="M60 118l28-34 28 34zM170 118l24-28 24 28zM440 118l28-34 28 34zM520 118l22-26 22 26zM330 118V74h8v44zM318 74h32v8h-32z"/>',
+town:'<path d="M40 118V72h46v46zM96 118V48h38v70zM144 118V84h56v34zM380 118V62h44v56zM434 118V80h56v38zM500 118V46h34v72z"/>',
+veld:'<path d="M80 118v-26h5v26zM330 118v-22h5v22zM505 118v-24h5v24z"/><ellipse cx="82" cy="88" rx="22" ry="8"/><ellipse cx="332" cy="92" rx="20" ry="7"/><ellipse cx="507" cy="90" rx="22" ry="8"/>',
+ridge:'<path d="M280 118C330 66 400 58 470 66L600 74V118z"/>',
+fort:'<path d="M150 118V70h300v48z"/>'+Array.from({length:11},(_,i)=>`<rect x="${150+i*28}" y="61" width="16" height="10"/>`).join(""),
+house:'<path d="M190 118V66h220v52zM180 66L300 26l120 40z"/><path d="M215 118v-26h20v26zM290 118v-26h20v26zM365 118v-26h20v26z" style="fill:var(--bg)"/>'
+};
+const P=(hat,w)=>`<g stroke="currentColor" stroke-width="4" stroke-linecap="round"><g transform="translate(0,-13)"><line class="${w?"leg":""}" y2="13"/><line class="${w?"leg b":""}" y2="13"/></g><line y1="-14" y2="-27"/><circle cy="-33" r="5" fill="currentColor" stroke="none"/>${hat?'<path d="M-7 -38h14M-4 -39v-8h8v8" stroke-width="3" fill="none"/>':""}</g>`;
+const R=()=>{const L=(x,b)=>`<g transform="translate(${x},-26)"><line class="leg ${b}" y2="26" stroke-width="3.5"/></g>`;
+return `<g class="bob rd" stroke="currentColor" stroke-linecap="round">${L(-13,"")}${L(-8,"b")}${L(9,"b")}${L(14,"")}<ellipse cy="-31" rx="19" ry="8" fill="currentColor" stroke="none"/><path d="M13 -36L24 -50l11 7-3 6-8-2z" fill="currentColor" stroke="none"/><path d="M-19 -34q-9 4 -8 14" fill="none" stroke-width="3"/><line x1="0" y1="-38" x2="2" y2="-53" stroke-width="5"/><circle cx="2" cy="-59" r="5" fill="currentColor" stroke="none"/><path d="M-5 -63h14" stroke-width="3"/></g>`};
+const A=([k,x0,x1,d,c,o={}])=>{
+ if(k=="f")return `<g transform="translate(${x0},118)" class="fl" style="color:var(--ink)"><line y2="-54" stroke="currentColor" stroke-width="2"/><g transform="translate(0,-54)"><path class="wave" d="M0 0h24v14H0z" fill="#fff" stroke="currentColor"/></g></g>`;
+ const st=k=="s",m=o.m||"loop",rd=k=="r",n=Math.max(1,Math.round(d/(rd?.33:.6))),xs=(m=="once"||st)?x1:(x0+x1)/2;
+ return `<g transform="translate(0,${118+(o.y||0)})" style="color:var(--${c})"><g class="mv ${m}" style="--x0:${x0}px;--x1:${x1}px;--xs:${xs}px;--d:${d}s;--dl:${o.dl||0}s;--n:${n}${st?";animation:none;transform:translateX("+x0+"px)":""}"><g class="${m=="pace"?"fp":""}"><g transform="scale(${x1<x0?-1:1},1)">${rd?R():P(k=="h",!st)}</g></g></g></g>`};
+const BO=[["s",420,420,1,"ink",{y:-57}],["s",480,480,1,"ink",{y:-52}],["s",545,545,1,"ink",{y:-47}]];
+const SC=[
+["tents",[["w",-30,640,26,"gold"],["w",-30,640,26,"gold",{dl:-11}],["w",640,-30,30,"gold",{dl:-5}],["w",640,-30,30,"gold",{dl:-20}]],"Diggers and prospectors arrive on foot as the tent town grows."],
+["town",[["h",-30,640,28,"ink"],["w",-30,640,28,"gold",{dl:-9}],["w",640,-30,24,"gold"],["h",640,-30,24,"ink",{dl:-12}],["w",640,-30,24,"gold",{dl:-17}]],"Randlords in top hats and workers on foot: two very different Johannesburgs."],
+["veld",Array.from({length:5},(_,j)=>["r",-60,660,9,"raid",{dl:-j*1.2}]),"Jameson’s mounted column rides out of the Protectorate."],
+["ridge",[...Array.from({length:3},(_,j)=>["r",-60,660,10,"raid",{dl:-j*1.5}]),...BO],"The raiders (red) ride on while Boer riflemen hold the high ground."],
+["ridge",[["r",-60,260,7,"raid",{m:"once"}],["r",-60,200,7,"raid",{m:"once",dl:.8}],["r",-60,140,7,"raid",{m:"once",dl:1.6}],...BO,["f",285]],"The raiders halt at Doornkop and a white flag goes up."],
+["fort",[["w",150,450,12,"ink",{m:"pace",y:-48}],["w",-30,640,22,"war"],["w",640,-30,26,"ink",{dl:-9}]],"A sentry patrols the fort wall above the town."],
+["house",[["r",-60,150,7,"war",{m:"once"}],["h",230,370,10,"ink",{m:"pace"}],["w",640,-30,26,"ink",{dl:-7}]],"A courier rides in with news while officials come and go."],
+["house",[["h",-30,255,8,"ink",{m:"once"}],["h",-30,300,9.5,"war",{m:"once",dl:.7}],["h",640,345,8,"ink",{m:"once"}],["h",640,390,9.5,"war",{m:"once",dl:.7}]],"Delegates arrive at Melrose House to sign the peace."]
+];
+const scene=i=>{const[b,a,c]=SC[i];return `<svg class="scene" viewBox="0 0 600 140" role="img" aria-label="Animated scene: ${c}"><g style="fill:var(--mute);opacity:.45">${BG[b]}</g><rect y="118" width="600" height="22" style="fill:var(--line)"/><path d="M0 118H600" style="stroke:var(--c);stroke-width:3"/>${a.map(A).join("")}</svg><p class="count">${c}</p>`};
+const nav=document.getElementById("nav"),main=document.getElementById("main");
+nav.innerHTML=S.map((s,i)=>`<li><button class="stop ${s.p}" data-i="${i}"><small>${s.d}</small><br>${s.t}</button></li>`).join("");
+function show(i,scroll){
+ const s=S[i],q=encodeURIComponent(s.q);
+ main.className=s.p;
+ main.innerHTML=`<p class="date">${s.d}</p><h2>${s.t}</h2><span class="phase">${PH[s.p]}</span>
+ ${scene(i)}
+ ${s.img?`<figure><img src="${s.img}" alt="${s.t}"><figcaption>${s.cap}</figcaption></figure>`:""}
+ <p>${s.b}</p>
+ <div class="why"><strong>Why it matters.</strong> ${s.w}</div>
+ <div class="map"><iframe title="Satellite map: ${s.t}" loading="lazy" src="https://maps.google.com/maps?q=${q}&t=k&z=13&output=embed"></iframe>
+ <p><a href="https://www.google.com/maps/search/?api=1&query=${q}" target="_blank" rel="noopener">Open this location in Google Maps (try Street View)</a></p></div>
+ <div class="think"><strong>Think about it.</strong> ${s.k}</div>
+ <div class="row"><button class="btn" id="prev" ${i==0?"disabled":""}>Previous stop</button><span class="count">Stop ${i+1} of ${S.length}</span><button class="btn" id="next" ${i==S.length-1?"disabled":""}>Next stop</button></div>`;
+ document.querySelectorAll(".stop").forEach((b,j)=>b.setAttribute("aria-current",j==i));
+ history.replaceState(null,"","#stop-"+(i+1));
+ document.getElementById("prev").onclick=()=>show(i-1,true);
+ document.getElementById("next").onclick=()=>show(i+1,true);
+ if(scroll)main.scrollIntoView({behavior:"smooth",block:"start"});
+}
+nav.onclick=e=>{const b=e.target.closest(".stop");if(b)show(+b.dataset.i,true)};
+addEventListener("keydown",e=>{const i=+(location.hash.split("-")[1]||1)-1;
+ if(e.key=="ArrowRight"&&i<S.length-1)show(i+1,true);if(e.key=="ArrowLeft"&&i>0)show(i-1,true)});
+const h=parseInt((location.hash.match(/stop-(\d+)/)||[])[1]);
+show(h>=1&&h<=S.length?h-1:0,false);
+</script>
+</body>
+</html>
